@@ -15,31 +15,26 @@
     <table>
       <thead>
         <tr>
-          <th>Invoice</th>
-          <th>Company</th>
-          <th>Due Date</th>
-          <th>Da mamada</th>
-          <th>Amount</th>
+          <th>idi</th>
+            <th>clienteId</th>
+            <th>cstat</th>
+            <th>desconto</th>
+            <th>fiscal</th>
+            <th>motivo</th>
+            <th>nfceId</th>
+            <th>valor</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Oi</td>
-          <td>Oi</td>
-          <td>Oi</td>
-          <td>
-            <p class="status status-unpaid">NÃO PAGOU</p>
-          </td>
-          <td class="amount">Oi</td>
-        </tr>
-        <tr>
-          <td>Oi</td>
-          <td>Oi</td>
-          <td>Oi</td>
-          <td>
-            <p class="status status-unpaid">NÃO PAGOU</p>
-          </td>
-          <td class="amount">Oi</td>
+        <tr *ngFor="let venda of vendas" >
+          <td >{{venda.idi}}</td>
+          <td >{{venda.clienteId}}</td>
+          <td >{{venda.cstat}}</td>
+          <td >{{venda.desconto}}</td>
+          <td >{{venda.fiscal}}</td>
+          <td >{{venda.motivo}}</td>
+          <td >{{venda.nfceId}}</td>
+          <td >{{venda.valor}}</td>
         </tr>
       </tbody>
     </table>
