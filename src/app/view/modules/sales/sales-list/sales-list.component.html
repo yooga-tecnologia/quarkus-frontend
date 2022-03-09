@@ -11,6 +11,9 @@
 </head>
 
 <body>
+  <h3 class="title-h3">Vendas pendentes <br>
+    <br>
+    </h3>
   <div>
     <table>
       <thead>
@@ -18,11 +21,12 @@
           <th>idi</th>
             <th>clienteId</th>
             <th>cstat</th>
-            <th>desconto</th>
-            <th>fiscal</th>
             <th>motivo</th>
             <th>nfceId</th>
             <th>valor</th>
+            <th>desconto</th>
+            <th>acréscimo</th>
+            <th>data / hora</th>
         </tr>
       </thead>
       <tbody>
@@ -30,11 +34,12 @@
           <td >{{venda.idi}}</td>
           <td >{{venda.clienteId}}</td>
           <td >{{venda.cstat}}</td>
-          <td >{{venda.desconto}}</td>
-          <td >{{venda.fiscal}}</td>
           <td >{{venda.motivo}}</td>
           <td >{{venda.nfceId}}</td>
-          <td >{{venda.valor}}</td>
+          <td >{{venda.valor| currencyBrl: true }}</td>
+          <td >{{venda.desconto | currencyBrl: true}}</td>
+          <td >{{venda.acrescimo | currencyBrl: true}}</td>
+          <td >{{venda.dataInc | amDateFormat: "DD/MM/YYYY HH:mm:ss"}}</td>
         </tr>
       </tbody>
     </table>

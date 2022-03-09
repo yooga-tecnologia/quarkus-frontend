@@ -1,13 +1,12 @@
 export class Venda {
+  dataInc: Date;
     acrescimo: number
-    clienteId: number 
+    clienteId: number
     codigo: number
     cstat: number
     desconto: number
-    fiscal: number
     idi: number
     motivo: string
     nfceId: number
     valor: number
   }
-  

@@ -17,12 +17,11 @@ export class SalesListComponent implements OnInit {
     private activatedRoute: ActivatedRoute) { }
 
   async ngOnInit() {
-    console.log("Iniciou ?")
     await this.loadQuarkusList();
   }
 
   async loadQuarkusList() {
     this.vendas = await this.salesService.findVendasPendentes();
-    console.log(this.vendas);
+    console.log(this.vendas)
   }
 }

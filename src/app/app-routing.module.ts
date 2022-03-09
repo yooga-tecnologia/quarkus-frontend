@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SalesListComponent } from './view/modules/sales/sales-list/sales-list.component';
 
 const routes: Routes = [
-  
+
   {
     path: "salesList",
     component: SalesListComponent
@@ -13,6 +13,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+   declarations: [
+
+  ]
 })
 export class AppRoutingModule { }
