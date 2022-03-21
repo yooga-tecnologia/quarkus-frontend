@@ -9,12 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { CurrencyBrlPipe } from './pipe/currencyBrl.pipe';
 import { MomentModule } from "ngx-moment";
 import { SalesModule } from './view/modules/sales/sales.module';
+import { NavButtonsComponent } from './view/modules/nav-buttons/nav-buttons.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SalesListComponent,
+    NavButtonsComponent,
     HeaderComponent,
     CurrencyBrlPipe,
 
@@ -26,7 +28,7 @@ import { SalesModule } from './view/modules/sales/sales.module';
     AppRoutingModule,
     HttpClientModule,
     MomentModule,
-    SalesModule
+    SalesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

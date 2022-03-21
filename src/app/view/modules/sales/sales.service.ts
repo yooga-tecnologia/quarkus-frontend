@@ -8,7 +8,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class SalesService {
 
-  baseUrl= "http://localhost:8082"
+  baseUrl= "http://localhost:8083"
 
   constructor(
       private http: HttpClient,
@@ -17,7 +17,6 @@ export class SalesService {
   }
 
   public async findVendasPendentes(): Promise<any>{
-      console.log("Chamou ?")
       return this.http.get<any>(`${this.baseUrl}/venda/pedentes`).toPromise()
   }
 }

@@ -20,14 +20,12 @@ $radius:0.2rem;
 }
 
 body {
-  padding-top: 5rem;
   font-family: Mukta, sans-serif;
   height: 100vh;
   display: grid;
   justify-content: center;
   align-items: center;
   color: $clr-gray500;
-  background-color: $clr-gray100;
 }
 .title-h3 {
   text-align: center;
