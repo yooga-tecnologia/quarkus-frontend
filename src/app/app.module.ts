@@ -10,6 +10,7 @@ import { CurrencyBrlPipe } from './pipe/currencyBrl.pipe';
 import { MomentModule } from "ngx-moment";
 import { SalesModule } from './view/modules/sales/sales.module';
 import { NavButtonsComponent } from './view/modules/nav-buttons/nav-buttons.component';
+import { OrderModule } from 'ngx-order-pipe';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { NavButtonsComponent } from './view/modules/nav-buttons/nav-buttons.comp
     HttpClientModule,
     MomentModule,
     SalesModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

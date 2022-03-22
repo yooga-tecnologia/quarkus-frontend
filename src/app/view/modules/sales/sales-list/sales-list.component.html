@@ -3,35 +3,37 @@
   <br>
   <h3 class="title-h3">Vendas pendentes <br>
     <br>
-    </h3>
+  </h3>
   <div>
     <table>
       <thead>
         <tr>
-          <th>idi</th>
-          <th>código</th>
-            <th>clienteId</th>
-            <th>valor</th>
-            <th>desconto</th>
-            <th>acréscimo</th>
-            <th>data / hora</th>
-            <th>cstat</th>
-            <th>motivo</th>
-            <th>nfceId</th>
+          <th (click)="sort('idi')" >
+            Idi <span *ngIf="key =='idi'">{{reverse ? '▲' : '▼'}}</span>
+          </th>
+          <th (click)="sort('codigo')">Código <span *ngIf="key =='idi'">{{reverse ? '▲' : '▼'}}</span></th>
+          <th (click)="sort('clienteId')">ClienteId <span *ngIf="key =='clienteId'">{{reverse ? '▲' : '▼'}}</span></th>
+          <th (click)="sort('valor')">Valor <span *ngIf="key =='valor'">{{reverse ? '▲' : '▼'}}</span></th>
+          <th (click)="sort('desconto')">Desconto <span *ngIf="key =='desconto'">{{reverse ? '▲' : '▼'}}</span></th>
+          <th (click)="sort('acrescimo')">Acréscimo <span *ngIf="key =='acrescimo'">{{reverse ? '▲' : '▼'}}</span></th>
+          <th (click)="sort('data')">Data / Hora <span *ngIf="key =='data'">{{reverse ? '▲' : '▼'}}</span></th>
+          <th (click)="sort('cstat')">Cstat <span *ngIf="key =='cstat'">{{reverse ? '▲' : '▼'}}</span></th>
+          <th (click)="sort('motivo')">Motivo <span *ngIf="key =='motivo'">{{reverse ? '▲' : '▼'}}</span></th>
+          <th (click)="sort('nfceId')">NfceId <span *ngIf="key =='nfceId'">{{reverse ? '▲' : '▼'}}</span></th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let venda of vendas" >
-          <td >{{venda.idi}}</td>
-          <td>{{venda.codigo}}</td>
-          <td >{{venda.clienteId}}</td>
-          <td >{{venda.valor| currencyBrl: true }}</td>
-          <td >{{venda.desconto | currencyBrl: true}}</td>
-          <td >{{venda.acrescimo | currencyBrl: true}}</td>
-          <td >{{venda.dataInc | amDateFormat: "DD/MM/YYYY HH:mm:ss"}}</td>
-          <td >{{venda.cstat}}</td>
+        <tr *ngFor="let venda of vendas | orderBy: key : reverse; let i = index">
+          <td>{{venda.idi}}</td>
+          <td><a (click)="reenviar(venda.codigo)" rel="noopener noreferrer">{{venda.codigo}}</a></td>
+          <td>{{venda.clienteId}}</td>
+          <td>{{venda.valor| currencyBrl: true }}</td>
+          <td>{{venda.desconto | currencyBrl: true}}</td>
+          <td>{{venda.acrescimo | currencyBrl: true}}</td>
+          <td>{{venda.dataInc | amDateFormat: "DD/MM/YYYY HH:mm:ss"}}</td>
+          <td>{{venda.cstat}}</td>
           <td class="motivo">{{venda.motivo}}</td>
-          <td >{{venda.nfceId}}</td>
+          <td>{{venda.nfceId}}</td>
         </tr>
       </tbody>
     </table>
@@ -39,5 +41,3 @@
     <br>
   </div>
 </body>
-
-

@@ -20,4 +20,7 @@ export class SalesService {
   public async findVendasPendentes(): Promise<any>{
       return this.http.get<any>(`${this.api_quarkus_fiscal}venda/pedentes`).toPromise()
   }
+
+
+
 }

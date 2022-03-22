@@ -32,6 +32,10 @@ body {
   color: #54b6dc;
 }
 
+thead>tr>th {
+  cursor: pointer;
+}
+
 
 table{
   border-collapse: collapse;
@@ -39,6 +43,22 @@ table{
   text-align: left;
   overflow: hidden;
   box-shadow:0 5px 10px $clr-primary-dark;
+
+
+a {
+  cursor: pointer;
+  padding: 2px;
+  background-color: $clr-primary-dark;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff!important;
+}
+
+a:hover{
+  background-color: $clr-primary;
+}
 
   thead {
     box-shadow:0 5px 10px $clr-gray300;

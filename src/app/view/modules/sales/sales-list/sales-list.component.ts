@@ -11,9 +11,11 @@ import { SalesService } from '../sales.service';
 export class SalesListComponent implements OnInit {
 
   vendas: Venda[];
+  key: string = 'nome';
+  reverse: boolean = false;
 
   constructor(private salesService: SalesService,
-    private router: Router,
+    public router: Router,
     private activatedRoute: ActivatedRoute) { }
 
   async ngOnInit() {
@@ -22,6 +24,15 @@ export class SalesListComponent implements OnInit {
 
   async loadQuarkusList() {
     this.vendas = await this.salesService.findVendasPendentes();
-    console.log(this.vendas)
+  }
+
+
+  sort(key:any) {
+      this.key = key;
+      this.reverse = !this.reverse;
+  }
+
+  async reenviar(codigo:number){
+    return window.open(`https://api2.yooga.com.br/fiscalservice/reenviar/${codigo}`, '_blank')
   }
 }
