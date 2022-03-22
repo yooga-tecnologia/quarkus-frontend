@@ -11,7 +11,7 @@
           <th (click)="sort('idi')" >
             Idi <span *ngIf="key =='idi'">{{reverse ? '▲' : '▼'}}</span>
           </th>
-          <th (click)="sort('codigo')">Código <span *ngIf="key =='idi'">{{reverse ? '▲' : '▼'}}</span></th>
+          <th (click)="sort('codigo')">Código <span *ngIf="key =='codigo'">{{reverse ? '▲' : '▼'}}</span></th>
           <th (click)="sort('clienteId')">ClienteId <span *ngIf="key =='clienteId'">{{reverse ? '▲' : '▼'}}</span></th>
           <th (click)="sort('valor')">Valor <span *ngIf="key =='valor'">{{reverse ? '▲' : '▼'}}</span></th>
           <th (click)="sort('desconto')">Desconto <span *ngIf="key =='desconto'">{{reverse ? '▲' : '▼'}}</span></th>
