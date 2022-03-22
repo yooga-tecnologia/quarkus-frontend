@@ -48,6 +48,7 @@ table{
   tr {
     text-align: center;
 
+
   }
 
   th {
@@ -62,6 +63,10 @@ table{
   td {
     font-family: 'Roboto', sans-serif;
     padding: 1rem 2rem;
+  }.motivo{
+    width: 90px;
+    word-wrap: break-word;
+    max-width: 1px;
   }
 
   a {
