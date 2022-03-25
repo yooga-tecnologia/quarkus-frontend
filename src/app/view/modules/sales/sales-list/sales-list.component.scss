@@ -19,7 +19,7 @@ $radius:0.2rem;
   padding: 0;
 }
 
-body {
+.style {
   font-family: Mukta, sans-serif;
   height: 100vh;
   display: grid;
@@ -85,7 +85,7 @@ a:hover{
     padding: 1rem 2rem;
   }.motivo{
     word-wrap: break-word;
-    max-width: 600px;
+    max-width: 500px;
   }
 
   a {

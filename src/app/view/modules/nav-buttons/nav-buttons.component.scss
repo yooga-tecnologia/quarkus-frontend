@@ -14,13 +14,9 @@ $clr-gray500: #4f546c;
   margin-left: 5px;
   border: none;
   box-shadow:0 2px 2px $clr-primary-dark;
-  color:  $clr-primary-dark;
-  background-color: white;
+  color: white;
+  background-color: #4fc3f7;
   cursor: pointer;
-}
-
-body{
-  background-color: transparent;
 }
 
 .container {
@@ -28,11 +24,10 @@ body{
   flex-direction: row;
   justify-content: center;
   margin-top: -30px;
-
 }
 
 .nav-bar:hover{
   box-shadow:0 2px 5px $clr-gray300;
   color:  white;
-  background-color: $clr-primary-dark;
+  background-color: #52afd9;
 }

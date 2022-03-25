@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-buttons',
@@ -7,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavButtonsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public router: Router,
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit() {
   }
 
+  vendasPendetes() {
+    this.router.navigateByUrl('salesList')
+}
 
 }
