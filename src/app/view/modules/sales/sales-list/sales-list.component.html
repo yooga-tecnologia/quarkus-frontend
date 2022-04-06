@@ -1,4 +1,5 @@
 <div class="style">
+
   <br>
   <br>
   <h3 class="title-h3">Vendas pendentes <br>
@@ -25,7 +26,14 @@
       <tbody>
         <tr *ngFor="let venda of vendas | orderBy: key : reverse; let i = index">
           <td>{{venda.idi}}</td>
-          <td><a (click)="reenviar(venda.codigo)" rel="noopener noreferrer">{{venda.codigo}}</a></td>
+          <td class="vendaCodigo">
+            <a class="codigoVenda"  rel="noopener noreferrer">{{venda.codigo}}</a>
+            <br>
+            <br>
+            <a class="clipboard" (click)="copyText(venda.codigo)" alt="copiar"> <i class="fa fa-clipboard" aria-hidden="true"></i> </a>
+
+            <a  class="emitir" (click)="reenviar(venda.codigo) "  alt="emitir"> <i class="fa fa-check-square" aria-hidden="true"></i> </a>
+          </td>
           <td>{{venda.clienteId}}</td>
           <td>{{venda.valor| currencyBrl: true }}</td>
           <td>{{venda.desconto | currencyBrl: true}}</td>

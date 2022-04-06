@@ -14,7 +14,7 @@ export class SalesService {
       private http: HttpClient,
       private router: Router
   ) {
-    this.api_quarkus_fiscal = environment.api_quarkus_fiscal;
+    this.api_quarkus_fiscal = environment.api_fiscal;
   }
 
   public async findVendasPendentes(): Promise<any>{

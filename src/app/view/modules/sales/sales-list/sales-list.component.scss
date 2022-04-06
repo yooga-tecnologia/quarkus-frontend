@@ -36,6 +36,10 @@ thead>tr>th {
   cursor: pointer;
 }
 
+.buttonCopy{
+  background-color: #494a50;
+}
+
 
 table{
   border-collapse: collapse;
@@ -47,6 +51,24 @@ table{
 
 a {
   cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff!important;
+}.clipboard{
+  background-color: #494a50;
+  padding: 5px;
+  border-radius: 6px;
+  margin: 10px;
+  margin-left: -5px;
+}.emitir{
+  background-color: #06c70d;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+.codigoVenda{
+  cursor: pointer;
   padding: 2px;
   background-color: $clr-primary-dark;
   font-size: 17px;
@@ -56,9 +78,6 @@ a {
   color: #fff!important;
 }
 
-a:hover{
-  background-color: $clr-primary;
-}
 
   thead {
     box-shadow:0 5px 10px $clr-gray300;
@@ -67,8 +86,6 @@ a:hover{
 
   tr {
     text-align: center;
-
-
   }
 
   th {

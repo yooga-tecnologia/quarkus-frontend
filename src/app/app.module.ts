@@ -11,6 +11,7 @@ import { MomentModule } from "ngx-moment";
 import { SalesModule } from './view/modules/sales/sales.module';
 import { NavButtonsComponent } from './view/modules/nav-buttons/nav-buttons.component';
 import { OrderModule } from 'ngx-order-pipe';
+import { ClipboardModule } from 'ngx-clipboard';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { OrderModule } from 'ngx-order-pipe';
     HttpClientModule,
     MomentModule,
     SalesModule,
-    OrderModule
+    OrderModule,
+    ClipboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
