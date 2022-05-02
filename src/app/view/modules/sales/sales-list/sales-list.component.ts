@@ -13,6 +13,7 @@ export class SalesListComponent implements OnInit {
   vendas: Venda[];
   key: string = 'nome';
   reverse: boolean = false;
+  isClicked: boolean = false;
 
 
   constructor(private salesService: SalesService,
@@ -25,7 +26,10 @@ export class SalesListComponent implements OnInit {
   }
 
   async loadQuarkusList() {
+    console.log(this.vendas)
     this.vendas = await this.salesService.findVendasPendentes();
+    console.log(this.vendas)
+
   }
 
 
@@ -40,6 +44,7 @@ export class SalesListComponent implements OnInit {
 
 
   async reenviar(codigo:number){
+    this.isClicked = true;
     return window.open(`https://api2.yooga.com.br/fiscalservice/reenviar/${codigo}`, '_blank')
   }
 }

@@ -12,6 +12,7 @@ import { SalesModule } from './view/modules/sales/sales.module';
 import { NavButtonsComponent } from './view/modules/nav-buttons/nav-buttons.component';
 import { OrderModule } from 'ngx-order-pipe';
 import { ClipboardModule } from 'ngx-clipboard';
+import { DefaultImageComponent } from './view/modules/default-image/default-image.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { ClipboardModule } from 'ngx-clipboard';
     NavButtonsComponent,
     HeaderComponent,
     CurrencyBrlPipe,
+    DefaultImageComponent,
 
   ],
   imports: [
