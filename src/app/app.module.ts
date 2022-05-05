@@ -8,11 +8,15 @@ import { HeaderComponent } from './view/modules/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CurrencyBrlPipe } from './pipe/currencyBrl.pipe';
 import { MomentModule } from "ngx-moment";
-import { SalesModule } from './view/modules/sales/sales.module';
 import { NavButtonsComponent } from './view/modules/nav-buttons/nav-buttons.component';
 import { OrderModule } from 'ngx-order-pipe';
 import { ClipboardModule } from 'ngx-clipboard';
 import { DefaultImageComponent } from './view/modules/default-image/default-image.component';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
 
 
 @NgModule({
@@ -28,13 +32,14 @@ import { DefaultImageComponent } from './view/modules/default-image/default-imag
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     MomentModule,
-    SalesModule,
     OrderModule,
-    ClipboardModule
+    ClipboardModule,
+    MatSnackBarModule,
+    MatButtonModule,
+    MatIconModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

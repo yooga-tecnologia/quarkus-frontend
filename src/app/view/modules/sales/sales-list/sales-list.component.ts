@@ -26,10 +26,7 @@ export class SalesListComponent implements OnInit {
   }
 
   async loadQuarkusList() {
-    console.log(this.vendas)
     this.vendas = await this.salesService.findVendasPendentes();
-    console.log(this.vendas)
-
   }
 
 
@@ -38,13 +35,16 @@ export class SalesListComponent implements OnInit {
       this.reverse = !this.reverse;
   }
 
-  copyText(codigo: any) {
+  async copyText(codigo: any) {
     this.clipboardApi.copyFromContent(codigo)
+
+
   }
 
 
   async reenviar(codigo:number){
     this.isClicked = true;
-    return window.open(`https://api2.yooga.com.br/fiscalservice/reenviar/${codigo}`, '_blank')
+    await this.salesService.showMessage("AAAAAAAAAAA");
+    window.open(`https://api2.yooga.com.br/fiscalservice/reenviar/${codigo}`, '_blank')
   }
 }
