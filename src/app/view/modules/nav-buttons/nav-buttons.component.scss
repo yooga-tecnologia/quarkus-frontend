@@ -8,12 +8,13 @@ $clr-unpaid: #ffcdd2;
 $clr-gray500: #4f546c;
 
 .nav-bar{
-  width: 8.5rem;
+  width: 11.5rem;
   height: 3rem;
   border-radius: 10px;
   margin-left: 5px;
   border: none;
-  box-shadow:0 2px 2px $clr-primary-dark;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
   color: white;
   background-color: #4fc3f7;
   cursor: pointer;
