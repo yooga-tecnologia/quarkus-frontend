@@ -39,7 +39,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatSnackBarModule,
     MatButtonModule,
     MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

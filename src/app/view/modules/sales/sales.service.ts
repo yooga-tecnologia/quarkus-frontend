@@ -24,13 +24,21 @@ export class SalesService {
       return this.http.get<any>(`${this.api_quarkus_fiscal}venda/pedentes`).toPromise();
   }
 
-  public async showMessage(msg: string): Promise<any> {
-    await this.snackBar.open(msg, 'X', {
-      duration: 5000,
-      horizontalPosition: "center",
-      verticalPosition: "top"
-    })
-  }
+  public showMessage(msg: string): void{
+    this.snackBar.open(msg, 'X', {
+      duration: 100000,
+      horizontalPosition: "right",
+      verticalPosition: "top",
+      panelClass: ['info-snackbar']
+  })}
+
+  public showMessageCopy(msg: string): void{
+    this.snackBar.open(msg, 'X', {
+      duration: 3000,
+      horizontalPosition: "right",
+      verticalPosition: "top",
+      panelClass: ['sucesso-snackbar']
+  })}
 
 
 

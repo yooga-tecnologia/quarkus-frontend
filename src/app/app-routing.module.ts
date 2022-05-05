@@ -10,7 +10,7 @@ const routes: Routes = [
     path: '',
     children: [
       { path: 'salesList', component: SalesListComponent },
-      {path: 'default', component: DefaultImageComponent}
+
   ],
 
   },

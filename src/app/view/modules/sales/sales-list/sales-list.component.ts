@@ -37,14 +37,13 @@ export class SalesListComponent implements OnInit {
 
   async copyText(codigo: any) {
     this.clipboardApi.copyFromContent(codigo)
-
-
+    this.salesService.showMessageCopy(`Código ${codigo} copiado`);
   }
 
 
   async reenviar(codigo:number){
     this.isClicked = true;
-    await this.salesService.showMessage("AAAAAAAAAAA");
     window.open(`https://api2.yooga.com.br/fiscalservice/reenviar/${codigo}`, '_blank')
+    this.salesService.showMessage(`Venda ${codigo} Enviada`);
   }
 }
