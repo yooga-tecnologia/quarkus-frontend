@@ -1,0 +1,142 @@
+/* variaveis de cores */
+$clr-primary: #5088ed;
+$clr-primary-light: #e1f5fe;
+$clr-primary-dark: #5088ed;
+$clr-gray100: #f9fbff;
+$clr-gray300: #e1e5ee;
+$clr-peding: #fff0c2;
+$clr-unpaid: #ffcdd2;
+$clr-gray500: #4f546c;
+
+$radius:0.2rem;
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.style {
+  font-family: Mukta, sans-serif;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  color: $clr-gray500;
+}
+.title-h3 {
+  text-align: center;
+  color: #5088ed;
+  font-size: 30px;
+}
+
+thead>tr>th {
+  cursor: pointer;
+}
+
+.buttonCopy{
+  background-color: #494a50;
+}
+
+
+table{
+  border-collapse: collapse;
+  background-color: white;
+  text-align: left;
+  overflow: hidden;
+  box-shadow:0 5px 10px $clr-primary-dark;
+
+
+a {
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff!important;
+}.clipboard{
+  background-color: #494a50;
+  padding: 5px;
+  border-radius: 6px;
+  margin: 10px;
+  margin-left: -5px;
+}.emitir{
+  background-color: #06c70d;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+.emitir:hover{
+  background-color: #08980c;
+}
+
+
+.codigoVenda{
+  cursor: pointer;
+  padding: 2px;
+  background-color: $clr-primary-dark;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff!important;
+}
+
+
+  thead {
+    box-shadow:0 5px 10px $clr-gray300;
+    box-sizing: 0 5px 10px;
+  }
+
+  tr {
+    text-align: center;
+  }
+
+  th {
+    padding:  1rem 2rem;
+    color: $clr-primary;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.8rem;
+    font-weight: 900;
+  }
+
+  td {
+    font-family: 'Roboto', sans-serif;
+    padding: 1rem 2rem;
+  }.motivo{
+    word-wrap: break-word;
+    max-width: 500px;
+  }
+
+  a {
+    text-decoration: none;
+    color: rgb(39, 112, 223);
+  }
+
+  .status {
+    border-radius: $radius;
+    background-color: rgb(236, 125, 125);
+    color: white;
+    padding: 0.2rem 1rem;
+    text-align: center;
+
+    &-peding {
+      background-color: $clr-peding;
+      color: #494a50;
+    }
+  }
+
+  .amout {
+    text-align: right;
+  }
+}
+
+
+
+
+
+
+
