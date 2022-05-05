@@ -25,7 +25,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let venda of vendas | orderBy: key : reverse; let i = index">
-          <td>{{venda.idi}}</td>
+          <td><strong>{{venda.idi}}</strong></td>
           <td class="vendaCodigo">
             <a class="codigoVenda"  rel="noopener noreferrer">{{venda.codigo}}</a>
             <br>
@@ -34,14 +34,14 @@
 
             <a  class="emitir" (click)="reenviar(venda.codigo) "  alt="emitir"> <i class="fa fa-check-square" aria-hidden="true"></i> </a>
           </td>
-          <td>{{venda.clienteId}}</td>
-          <td>{{venda.valor| currencyBrl: true }}</td>
-          <td>{{venda.desconto | currencyBrl: true}}</td>
-          <td>{{venda.acrescimo | currencyBrl: true}}</td>
-          <td>{{venda.dataInc | amDateFormat: "DD/MM/YYYY HH:mm:ss"}}</td>
-          <td>{{venda.cstat}}</td>
-          <td class="motivo">{{venda.motivo}}</td>
-          <td>{{venda.nfceId}}</td>
+          <td> <strong>{{venda.clienteId}}</strong> </td>
+          <td><strong>{{venda.valor| currencyBrl: true }}</strong></td>
+          <td><strong>{{venda.desconto | currencyBrl: true}}</strong></td>
+          <td><strong>{{venda.acrescimo | currencyBrl: true}}</strong></td>
+          <td><strong>{{venda.dataInc | amDateFormat: "DD/MM/YYYY HH:mm:ss"}}</strong></td>
+          <td><strong>{{venda.cstat}}</strong></td>
+          <td class="motivo"><strong>{{venda.motivo}}</strong></td>
+          <td><strong>{{venda.nfceId}}</strong></td>
         </tr>
       </tbody>
     </table>
