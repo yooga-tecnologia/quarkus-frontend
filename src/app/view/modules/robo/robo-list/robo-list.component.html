@@ -19,7 +19,7 @@
           <th (click)="sort('ultCStat')">Ult Cstat<span *ngIf="key =='ultCStat'">{{reverse ? '▲' : '▼'}}</span></th>
           <th (click)="sort('ultNSU')">Ult NSU <span *ngIf="key =='ultNSU'">{{reverse ? '▲' : '▼'}}</span></th>
           <th (click)="sort('maxNSU')">max NSU <span *ngIf="key =='maxNSU'">{{reverse ? '▲' : '▼'}}</span></th>
-          <!-- <th (click)="sort('erroNSU')">Erro NSU <span *ngIf="key =='manifestar'">{{reverse ? '▲' : '▼'}}</span></th> -->
+          <th (click)="sort('erroNSU')">Erro NSU <span *ngIf="key =='erroNSU'">{{reverse ? '▲' : '▼'}}</span></th>
         </tr>
       </thead>
       <tbody>
@@ -33,7 +33,7 @@
           <td><strong>{{robo.ultCStat }}</strong></td>
           <td><strong>{{robo.ultNSU }}</strong></td>
           <td><strong>{{robo.maxNSU}}</strong></td>
-          <!-- <td><strong>{{robo.erroNSU }}</strong></td> -->
+          <td><strong>{{robo.erroNSU }}</strong></td>
         </tr>
       </tbody>
     </table>
