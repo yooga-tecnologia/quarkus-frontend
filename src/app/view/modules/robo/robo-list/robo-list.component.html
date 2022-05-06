@@ -2,7 +2,8 @@
 
   <br>
   <br>
-  <h3 class="title-h3">Lista de Clientes Robo <br>
+  <h3 class="title-h3">Lista de clientes robô fiscal <i class="fa fa-reddit" aria-hidden="true"></i>
+    <br>
     <br>
   </h3>
   <div>
@@ -11,28 +12,28 @@
         <tr>
           <th (click)="sort('xNome')">Razão Social <span *ngIf="key =='xNome'">{{reverse ? '▲' : '▼'}}</span></th>
           <th (click)="sort('cnpj')">Cnpj <span *ngIf="key =='cnpj'">{{reverse ? '▲' : '▼'}}</span></th>
-          <th (click)="sort('manifestar')">Manifestar <span *ngIf="key =='manifestar'">{{reverse ? '▲' : '▼'}}</span></th>
           <th (click)="sort('certificadoValidade')">Validade Certificado <span *ngIf="key =='certificadoValidade'">{{reverse ? '▲' : '▼'}}</span></th>
           <th (click)="sort('dataUltCStat')">Data Ult Cstat <span *ngIf="key =='dataUltCStat'">{{reverse ? '▲' : '▼'}}</span></th>
-          <th (click)="sort('ultCStat')">Ult Cstat<span *ngIf="key =='ultCStat'">{{reverse ? '▲' : '▼'}}</span></th>
           <th (click)="sort('dataNSU')">Data NSU <span *ngIf="key =='dataNSU'">{{reverse ? '▲' : '▼'}}</span></th>
+          <th (click)="sort('dataInclusao')">Data Inclusão <span *ngIf="key =='dataInclusao'">{{reverse ? '▲' : '▼'}}</span></th>
+          <th (click)="sort('ultCStat')">Ult Cstat<span *ngIf="key =='ultCStat'">{{reverse ? '▲' : '▼'}}</span></th>
           <th (click)="sort('ultNSU')">Ult NSU <span *ngIf="key =='ultNSU'">{{reverse ? '▲' : '▼'}}</span></th>
           <th (click)="sort('maxNSU')">max NSU <span *ngIf="key =='maxNSU'">{{reverse ? '▲' : '▼'}}</span></th>
-          <th (click)="sort('dataInclusao')">Data Inclusão <span *ngIf="key =='dataInclusao'">{{reverse ? '▲' : '▼'}}</span></th>
+          <!-- <th (click)="sort('erroNSU')">Erro NSU <span *ngIf="key =='manifestar'">{{reverse ? '▲' : '▼'}}</span></th> -->
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let robo of roboList | orderBy: key : reverse; let i = index">
+        <tr *ngFor="let robo of roboList | orderBy: key : reverse; let i = index "  [ngClass]="{'text-danger': robo.ultCStat === 656}">
           <td><strong>{{robo.xNome}}</strong></td>
           <td><strong>{{robo.cnpj}}</strong></td>
-          <td><strong>{{robo.manifestar }}</strong></td>
-          <td> <strong>{{robo.certificadoValidade | amDateFormat: "DD/MM/YYYY HH:mm:ss"}}</strong> </td>
-          <td><strong>{{robo.dataUltCStat | amDateFormat: "DD/MM/YYYY HH:mm:ss"}}</strong></td>
+          <td> <strong>{{robo.certificadoValidade | amDateFormat: "DD/MM/YYYY"}}</strong> </td>
+          <td><strong>{{robo.dataUltCStat | amDateFormat: "DD/MM/YYYY"}}</strong></td>
+          <td><strong>{{robo.dataNSU | amDateFormat: "DD/MM/YYYY" }}</strong></td>
+          <td><strong>{{robo.dataInclusao | amDateFormat: "DD/MM/YYYY"}}</strong></td>
           <td><strong>{{robo.ultCStat }}</strong></td>
-          <td><strong>{{robo.dataNSU }}</strong></td>
           <td><strong>{{robo.ultNSU }}</strong></td>
           <td><strong>{{robo.maxNSU}}</strong></td>
-          <td><strong>{{robo.dataInclusao | amDateFormat: "DD/MM/YYYY HH:mm:ss"}}</strong></td>
+          <!-- <td><strong>{{robo.erroNSU }}</strong></td> -->
         </tr>
       </tbody>
     </table>

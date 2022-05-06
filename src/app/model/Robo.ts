@@ -9,4 +9,5 @@ export class Robo {
 		dataNSU: Date;
 		dataInclusao: Date;
 		cnpj: string;
+    erroNSU: string;
   }

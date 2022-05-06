@@ -1,6 +1,6 @@
-$clr-primary: #5ccaf4;
+$clr-primary: #286de5;
 $clr-primary-light: #e1f5fe;
-$clr-primary-dark: #4fc3f7;
+$clr-primary-dark: #3b74dc;
 $clr-gray100: #f9fbff;
 $clr-gray300: #e1e5ee;
 $clr-peding: #fff0c2;
@@ -30,5 +30,5 @@ $clr-gray500: #4f546c;
 .nav-bar:hover{
   box-shadow:0 2px 5px $clr-gray300;
   color:  white;
-  background-color: #52afd9;
+  background-color: $clr-primary-dark;
 }
