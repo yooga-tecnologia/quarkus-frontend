@@ -49,14 +49,12 @@ export class SalesListComponent implements OnInit {
     this.isClicked = true;
     window.open(`https://api2.yooga.com.br/fiscalservice/reenviar/${codigo}`, '_blank')
 
-    const nota =  this.salesService.reenviarNotasPendentes(codigo).then(response => {
+    this.salesService.reenviarNotasPendentes(codigo).then(response => {
       if(response.notaEvento.cStat === 102 || response.notaEvento.cStat === 100){
           this.salesService.showMessage(`${response.notaEvento.xMotivo} código:${codigo}`);
       }else {
         this.salesService.showMessageError(`${response.notaEvento.xMotivo} código:${codigo}`);
       }
     });
-
-
   }
 }

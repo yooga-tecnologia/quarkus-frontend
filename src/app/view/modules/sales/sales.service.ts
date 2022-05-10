@@ -40,7 +40,7 @@ export class SalesService {
 
   public showMessageCopy(msg: string): void{
     this.snackBar.open(msg, 'X', {
-      duration: 3000,
+      duration: 5000,
       horizontalPosition: "right",
       verticalPosition: "top",
       panelClass: ['sucesso-snackbar']
@@ -48,7 +48,7 @@ export class SalesService {
 
   public showMessageError(msg: string): void{
     this.snackBar.open(msg, 'X', {
-      duration: 3000,
+      duration: 100000,
       horizontalPosition: "right",
       verticalPosition: "top",
       panelClass: ['error-snackbar']
