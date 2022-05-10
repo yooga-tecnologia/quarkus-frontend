@@ -51,8 +51,10 @@ export class SalesListComponent implements OnInit {
 
     this.salesService.reenviarNotasPendentes(codigo).then(response => {
       if(response.notaEvento.cStat === 102 || response.notaEvento.cStat === 100){
-          this.salesService.showMessage(`${response.notaEvento.xMotivo} código:${codigo}`);
+        window.scroll(0,0);
+        this.salesService.showMessage(`${response.notaEvento.xMotivo} código:${codigo}`);
       }else {
+        window.scroll(0,0);
         this.salesService.showMessageError(`${response.notaEvento.xMotivo} código:${codigo}`);
       }
     });
