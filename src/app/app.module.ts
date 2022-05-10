@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RoboListComponent } from './view/modules/robo/robo-list/robo-list.component';
+import axios from 'axios';
 
 
 

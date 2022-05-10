@@ -17,11 +17,23 @@
     padding-top: 100rem;
 }
 
+.error-snackbar {
+  position: absolute;
+  top: 125px;
+  right: -13px;
+  background: #d61d10;
+  font-family: Mukta, sans-serif;
+  font-weight: 600;
+  color: white;
+  width: 2rem;
+  padding-top: 100rem;
+}
+
 .sucesso-snackbar {
   position: absolute;
   top: 125px;
   right: -13px;
-  background: #18a203;
+  background: #27610c;
   font-family: Mukta, sans-serif;
   font-weight: 600;
   color: white;

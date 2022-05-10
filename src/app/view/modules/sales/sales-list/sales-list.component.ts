@@ -1,8 +1,11 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Axios } from 'axios';
 import { ClipboardService } from 'ngx-clipboard';
 import { Venda } from 'src/app/model/Venda';
 import { SalesService } from '../sales.service';
+
 @Component({
   selector: 'app-sales-list',
   templateUrl: './sales-list.component.html',
@@ -18,6 +21,7 @@ export class SalesListComponent implements OnInit {
 
   constructor(private salesService: SalesService,
     public router: Router,
+    private http: HttpClient,
     private clipboardApi: ClipboardService,
     private activatedRoute: ActivatedRoute) { }
 
@@ -44,6 +48,15 @@ export class SalesListComponent implements OnInit {
   async reenviar(codigo:number){
     this.isClicked = true;
     window.open(`https://api2.yooga.com.br/fiscalservice/reenviar/${codigo}`, '_blank')
-    this.salesService.showMessage(`Venda ${codigo} Enviada`);
+
+    const nota =  this.salesService.reenviarNotasPendentes(codigo).then(response => {
+      if(response.notaEvento.cStat === 102 || response.notaEvento.cStat === 100){
+          this.salesService.showMessage(`${response.notaEvento.xMotivo} código:${codigo}`);
+      }else {
+        this.salesService.showMessageError(`${response.notaEvento.xMotivo} código:${codigo}`);
+      }
+    });
+
+
   }
 }

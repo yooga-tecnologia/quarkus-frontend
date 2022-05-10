@@ -10,6 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class SalesService {
   private api_quarkus_fiscal: string;
+  private apiRobo: string;
 
   constructor(
       private http: HttpClient,
@@ -18,10 +19,15 @@ export class SalesService {
 
   ) {
     this.api_quarkus_fiscal = environment.api_prod_fiscal;
+    this.apiRobo = environment.api_robo_fiscal;
   }
 
   public async findVendasPendentes(): Promise<any>{
       return this.http.get<any>(`${this.api_quarkus_fiscal}venda/pedentes`).toPromise();
+  }
+
+  public async reenviarNotasPendentes(codigo: number): Promise<any>{
+    return this.http.get<any>(`${this.apiRobo}${codigo}`).toPromise();
   }
 
   public showMessage(msg: string): void{
@@ -29,7 +35,7 @@ export class SalesService {
       duration: 100000,
       horizontalPosition: "right",
       verticalPosition: "top",
-      panelClass: ['info-snackbar']
+      panelClass: ['sucesso-snackbar']
   })}
 
   public showMessageCopy(msg: string): void{
@@ -38,6 +44,14 @@ export class SalesService {
       horizontalPosition: "right",
       verticalPosition: "top",
       panelClass: ['sucesso-snackbar']
+  })}
+
+  public showMessageError(msg: string): void{
+    this.snackBar.open(msg, 'X', {
+      duration: 3000,
+      horizontalPosition: "right",
+      verticalPosition: "top",
+      panelClass: ['error-snackbar']
   })}
 
 
