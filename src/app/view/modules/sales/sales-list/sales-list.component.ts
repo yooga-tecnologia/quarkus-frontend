@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Axios } from 'axios';
 import { ClipboardService } from 'ngx-clipboard';
+import { filter } from 'rxjs';
 import { Venda } from 'src/app/model/Venda';
 import { SalesService } from '../sales.service';
 
@@ -17,6 +17,7 @@ export class SalesListComponent implements OnInit {
   key: string = 'nome';
   reverse: boolean = false;
   isClicked: boolean = false;
+  transmitidas = 0;
 
 
   constructor(private salesService: SalesService,
@@ -47,15 +48,18 @@ export class SalesListComponent implements OnInit {
 
   async reenviar(codigo:number){
     this.isClicked = true;
-    window.open(`https://api2.yooga.com.br/fiscalservice/reenviar/${codigo}`, '_blank')
-
     this.salesService.reenviarNotasPendentes(codigo).then(response => {
-      if(response.notaEvento.cStat === 102 || response.notaEvento.cStat === 100){
-        window.scroll(0,0);
-        this.salesService.showMessage(`${response.notaEvento.xMotivo} código:${codigo}`);
+      if(response.notaEvento.cStat === 150 || response.notaEvento.cStat === 100){
+        this.salesService.showMessage(`${response.notaEvento.cStat} - ${response.notaEvento.xMotivo} código: ${codigo} `);
+        this.vendas.forEach((element, index) => {
+          if(element.codigo === codigo){
+            this.vendas.splice(index, 1);
+            this.transmitidas++
+          };
+          
+        });
       }else {
-        window.scroll(0,0);
-        this.salesService.showMessageError(`${response.notaEvento.xMotivo} código:${codigo}`);
+        this.salesService.showMessageError(`${response.notaEvento.cStat} - ${response.notaEvento.xMotivo} código: ${codigo} `);
       }
     });
   }

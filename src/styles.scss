@@ -6,7 +6,7 @@
 }
 
 .info-snackbar {
-    position: absolute;
+    position: fixed;
     top: 125px;
     right: -13px;
     background: #5088ed;
@@ -18,7 +18,7 @@
 }
 
 .error-snackbar {
-  position: absolute;
+  position: fixed;
   top: 125px;
   right: -13px;
   background: #d61d10;
@@ -30,7 +30,7 @@
 }
 
 .sucesso-snackbar {
-  position: absolute;
+  position: fixed;
   top: 125px;
   right: -13px;
   background: #27610c;
@@ -64,3 +64,7 @@
 }
 
 
+.swal2-popup {
+  font-size: 1.2rem !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+}

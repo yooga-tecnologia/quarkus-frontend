@@ -4,17 +4,20 @@
   <br>
   <h3 class="title-h3">Vendas pendentes <i class="fa fa-files-o" aria-hidden="true"></i>
     <br>
-    <br>
   </h3>
   <div>
+  <div class="transmitidas">
+    <h4 >Notas Transmitidas: {{transmitidas}}</h4>
+  </div>
+  <br>
     <table>
       <thead>
         <tr>
           <th (click)="sort('idi')" >
             Idi <span *ngIf="key =='idi'">{{reverse ? '▲' : '▼'}}</span>
           </th>
+          <th (click)="sort('acoes')">Ações <span *ngIf="key =='acoes'">{{reverse ? '▲' : '▼'}}</span></th>
           <th (click)="sort('codigo')">Código <span *ngIf="key =='codigo'">{{reverse ? '▲' : '▼'}}</span></th>
-          <th (click)="sort('clienteId')">ClienteId <span *ngIf="key =='clienteId'">{{reverse ? '▲' : '▼'}}</span></th>
           <th (click)="sort('valor')">Valor <span *ngIf="key =='valor'">{{reverse ? '▲' : '▼'}}</span></th>
           <th (click)="sort('desconto')">Desconto <span *ngIf="key =='desconto'">{{reverse ? '▲' : '▼'}}</span></th>
           <th (click)="sort('acrescimo')">Acréscimo <span *ngIf="key =='acrescimo'">{{reverse ? '▲' : '▼'}}</span></th>
@@ -27,15 +30,11 @@
       <tbody>
         <tr *ngFor="let venda of vendas | orderBy: key : reverse; let i = index">
           <td><strong>{{venda.idi}}</strong></td>
+          <td><a class="clipboard" (click)="copyText(venda.codigo)" > <i class="fa fa-clipboard" aria-hidden="true"  alt="copiar"></i> </a>
+            <a  class="emitir" (click)="reenviar(venda.codigo) "  alt="emitir"> <i class="fa fa-check-square" aria-hidden="true"></i> </a> </td>
           <td class="vendaCodigo">
             <a class="codigoVenda"  rel="noopener noreferrer">{{venda.codigo}}</a>
-            <br>
-            <br>
-            <a class="clipboard" (click)="copyText(venda.codigo)" alt="copiar"> <i class="fa fa-clipboard" aria-hidden="true"></i> </a>
-
-            <a  class="emitir" (click)="reenviar(venda.codigo) "  alt="emitir"> <i class="fa fa-check-square" aria-hidden="true"></i> </a>
           </td>
-          <td> <strong>{{venda.clienteId}}</strong> </td>
           <td><strong>{{venda.valor| currencyBrl: true }}</strong></td>
           <td><strong>{{venda.desconto | currencyBrl: true}}</strong></td>
           <td><strong>{{venda.acrescimo | currencyBrl: true}}</strong></td>

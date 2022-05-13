@@ -12,10 +12,10 @@ export class NavButtonsComponent implements OnInit {
   ngOnInit() {}
 
   vendasPendetes() {
-    this.router.navigateByUrl('salesList');
+    this.router.navigateByUrl('page/salesList');
   }
 
   roboClients(){
-    this.router.navigateByUrl('roboClients');
+    this.router.navigateByUrl('page/roboClients');
   }
 }

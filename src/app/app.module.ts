@@ -17,7 +17,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RoboListComponent } from './view/modules/robo/robo-list/robo-list.component';
-import axios from 'axios';
+import { LoginComponent } from './view/modules/login/login/login.component';
+import { PageModelComponent } from './view/modules/page-model/page-model/page-model.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -30,7 +32,8 @@ import axios from 'axios';
     CurrencyBrlPipe,
     DefaultImageComponent,
     RoboListComponent,
-
+    LoginComponent,
+    PageModelComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import axios from 'axios';
     MatButtonModule,
     MatIconModule,
     BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

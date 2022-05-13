@@ -32,6 +32,17 @@ $radius:0.2rem;
   color: #5088ed;
   font-size: 30px;
 }
+h4 {
+  margin: auto;
+}
+.transmitidas {
+  background-color: #417fed;
+  width: 200px;
+  color: white;
+  height: 26px;
+  border-radius: 4px;
+  display: flex;
+}
 
 thead>tr>th {
   cursor: pointer;
@@ -132,6 +143,8 @@ a {
   .amout {
     text-align: right;
   }
+
+ 
 }
 
 
