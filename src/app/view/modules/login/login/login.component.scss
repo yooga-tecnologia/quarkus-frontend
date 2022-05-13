@@ -11,8 +11,6 @@ body{
   align-items: center;
 }
 
-
-
 .login {
   display: flex;
     flex-direction: column;
@@ -33,6 +31,7 @@ body{
 .login input {
   margin-top: 10px;
   background-color: #252A34;
+  font-size: 25px;
   padding-left: 10px;
   color: #CBD0f7;
   border: none;
