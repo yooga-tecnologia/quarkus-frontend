@@ -18,7 +18,7 @@ export class SalesService {
       private snackBar: MatSnackBar
 
   ) {
-    this.api_quarkus_fiscal = environment.api_prod_fiscal;
+    this.api_quarkus_fiscal = environment.api_quarkus_fiscal;
     this.retornoNota = environment.retornoNota;
   }
 
