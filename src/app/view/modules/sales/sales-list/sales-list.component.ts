@@ -17,6 +17,7 @@ export class SalesListComponent implements OnInit {
   reverse: boolean = false;
   isClicked: boolean = false;
   transmitidas = 0;
+  pendentes = 0;
 
   constructor(
     private salesService: SalesService,
@@ -32,6 +33,8 @@ export class SalesListComponent implements OnInit {
 
   async loadQuarkusList() {
     this.vendas = await this.salesService.findVendasPendentes();
+    this.pendentes = this.vendas.length;
+
   }
 
   sort(key: any) {
@@ -60,6 +63,7 @@ export class SalesListComponent implements OnInit {
             if (element.codigo === codigo) {
               this.vendas.splice(index, 1);
               this.transmitidas++;
+              this.pendentes--;
             }
           });
 

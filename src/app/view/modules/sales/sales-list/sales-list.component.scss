@@ -35,13 +35,31 @@ $radius:0.2rem;
 h4 {
   margin: auto;
 }
+
+.container-info{
+  display: flex;
+}
+
 .transmitidas {
   background-color: #417fed;
-  width: 200px;
+  width: 226px;
   color: white;
-  height: 26px;
+  height: 32px;
   border-radius: 4px;
-  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 0.4rem;
+}
+
+.pendentes {
+  background-color: #f12530;
+  width: 226px;
+  color: white;
+  height: 32px;
+  border-radius: 4px;
+  text-align: center;
+  justify-content: center;
+  padding: 0.4rem;
 }
 
 thead>tr>th {
@@ -144,7 +162,7 @@ a {
     text-align: right;
   }
 
- 
+
 }
 
 
