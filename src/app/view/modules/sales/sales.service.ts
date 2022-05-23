@@ -19,7 +19,7 @@ export class SalesService {
 
   ) {
     this.api_quarkus_fiscal = environment.api_quarkus_fiscal;
-    this.retornoNota = environment.retornoNota;
+    this.retornoNota = environment.retorno_nota;
   }
 
   public async findVendasPendentes(): Promise<any>{
