@@ -23,7 +23,7 @@ export class SalesService {
   }
 
   public async findVendasPendentes(): Promise<any>{
-      return this.http.get<any>(`${this.api_quarkus_fiscal}venda/pedentes`).toPromise();
+      return this.http.get<any>(`${this.api_quarkus_fiscal}venda/pendentes`).toPromise();
   }
 
   public async reenviarNotasPendentes(codigo: number): Promise<any>{
