@@ -18,6 +18,7 @@ export class SalesListComponent implements OnInit {
   isClicked: boolean = false;
   transmitidas = 0;
   pendentes = 0;
+  filter:any;
 
   constructor(
     private salesService: SalesService,

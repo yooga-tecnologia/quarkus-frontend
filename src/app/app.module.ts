@@ -20,7 +20,7 @@ import { RoboListComponent } from './view/modules/robo/robo-list/robo-list.compo
 import { LoginComponent } from './view/modules/login/login/login.component';
 import { PageModelComponent } from './view/modules/page-model/page-model/page-model.component';
 import { FormsModule } from '@angular/forms';
-
+import { Ng2SearchPipeModule } from "ng2-search-filter";
 
 
 @NgModule({
@@ -46,7 +46,8 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatIconModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

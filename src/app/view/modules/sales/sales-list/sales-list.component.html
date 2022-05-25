@@ -4,6 +4,7 @@
   <br>
   <h3 class="title-h3">Vendas pendentes <i class="fa fa-files-o" aria-hidden="true"></i>
     <br>
+    <br>
   </h3>
   <div>
   <div class="container-info">
@@ -16,6 +17,12 @@
   <div class="pendentes">
     <h4 ><i class="fa fa-window-close" aria-hidden="true"></i>
       Notas Pendentes: {{pendentes}}</h4>
+  </div>
+  &nbsp;
+  &nbsp;
+  <p><strong>Filtro:</strong></p>
+  <div class="filter">
+    <input class="filter-input" type="text" name="search" [(ngModel)]="filter" />
   </div>
 
 </div>
@@ -39,7 +46,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let venda of vendas | orderBy: key : reverse; let i = index">
+        <tr *ngFor="let venda of vendas |  filter:filter  | orderBy: key : reverse; let i = index">
           <td><strong>{{venda.idi}}</strong></td>
           <td><a class="clipboard" (click)="copyText(venda.codigo)" > <i class="fa fa-clipboard" aria-hidden="true"  alt="copiar"></i> </a>
             <a  class="emitir" (click)="reenviar(venda.codigo) "  alt="emitir"> <i class="fa fa-check-square" aria-hidden="true"></i> </a> </td>

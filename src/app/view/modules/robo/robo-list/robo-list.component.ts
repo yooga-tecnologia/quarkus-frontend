@@ -16,6 +16,7 @@ export class RoboListComponent implements OnInit {
   key: string = 'nome';
   reverse: boolean = false;
   isClicked: boolean = false;
+  filter:any
 
   constructor(private roboService: RoboService,
     private router: Router,

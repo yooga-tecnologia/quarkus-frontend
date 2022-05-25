@@ -1,11 +1,17 @@
 <div class="style">
-
   <br>
   <br>
   <h3 class="title-h3">Lista de clientes robô fiscal <i class="fa fa-reddit" aria-hidden="true"></i>
     <br>
     <br>
   </h3>
+<div class="container">
+  <p><strong>Filtro:</strong></p>
+  <div class="filter">
+    <input class="filter-input" type="text" name="search" [(ngModel)]="filter" />
+  </div>
+</div>
+<br>
   <div>
     <table>
       <thead>
@@ -23,7 +29,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let robo of roboList | orderBy: key : reverse; let i = index "  [ngClass]="{'text-danger': robo.ultCStat === 656}">
+        <tr *ngFor="let robo of roboList |  filter:filter | orderBy: key : reverse; let i = index "  [ngClass]="{'text-danger': robo.ultCStat === 656}">
           <td><strong>{{robo.xNome}}</strong></td>
           <td><strong>{{robo.cnpj}}</strong></td>
           <td> <strong>{{robo.certificadoValidade | amDateFormat: "DD/MM/YYYY"}}</strong> </td>
